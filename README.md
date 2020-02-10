@@ -29,3 +29,14 @@ On a Windows system, you can use the following PowerShell command to perfrom thi
 $files = Get-ChildItem . -recurse -include *.* | Where-Object {$_.Name -like "*testmodule*"}; foreach ($file in $files) { $newname = ([String]$file).Replace("testmodule", "newname"); Rename-Item -Path $file $newname }
 
 Version your plugin accordingly. In the file version.php, replace the value for the version with a value combined of the current date (e.g. 20180706 for the 6th of July 2018) and the number of releases on this day (in most cases, 00. If you update your plugin multiple times during one day, simply increase this number). This might look something like this: 2018070800. Also replace the value of the variable VERSION in the second line of the file db/install.xml.
+
+# How to deploy?
+Create a ZIP archive of the /source folder and name it according to your app (in this tutorial "newname").
+
+Login in to our Moodle instance, navigate to the Management of Moodle and select the Option to install a new plugin.
+
+Upload your ZIP archive and click the button to proceed. You do not need to edit any other fields in this interface.
+
+When asked if you want to update the Moodle database, do so.
+
+Go the main page of Moodle, select a Course and click "Enable Editing" in the options on the upper right. by clicking the option of "Add a resource ...", you should see a list of available plugins including your new module.
