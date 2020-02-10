@@ -31,7 +31,7 @@ $files = Get-ChildItem . -recurse -include *.* | Where-Object {$_.Name -like "*t
 Version your plugin accordingly. In the file version.php, replace the value for the version with a value combined of the current date (e.g. 20180706 for the 6th of July 2018) and the number of releases on this day (in most cases, 00. If you update your plugin multiple times during one day, simply increase this number). This might look something like this: 2018070800. Also replace the value of the variable VERSION in the second line of the file db/install.xml.
 
 # How to deploy?
-Create a ZIP archive of the /source folder and name it according to your app (in this tutorial "newname").
+Create a ZIP archive of the root folder and name it according to your app.
 
 Login in to our Moodle instance, navigate to the Management of Moodle and select the Option to install a new plugin.
 
